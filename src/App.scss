@@ -1,0 +1,37 @@
+.App {
+    text-align: center;
+    height: 100vh;
+    
+    .header{
+        height: 128px;
+        background: #6200ee;
+    }
+
+    .content-container {
+
+        .user-info {
+            height: 100%;
+            width: 40%;
+            background-color: lightgray;
+
+            .profile {
+                height: 30%;
+                border-bottom: black solid 1px;
+            }
+
+            .calories-info {
+                height: 70%;
+            }
+        }
+
+        .item-list {
+            height: 100%;
+            width: 60%;
+        }
+    }
+}
+
+html,body{
+    margin:0;
+    padding:0;
+}
