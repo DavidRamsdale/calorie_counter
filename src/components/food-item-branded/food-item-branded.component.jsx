@@ -3,9 +3,9 @@ import './food-item-branded.styles.scss'
 
 const FoodItembranded = ({ imageUrl, itemName, brandName }) => { 
     return(
-        <div className='checkout-item'>
+        <div className='food-item'>
             <div className='image-container'>
-                <img src={imageUrl} alt='item'/>
+                <img className="image" src={imageUrl} alt='item'/>
             </div>
             <div className='food-info'>
                 <span>{itemName}</span>

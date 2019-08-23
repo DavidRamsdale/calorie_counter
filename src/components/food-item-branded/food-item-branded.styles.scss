@@ -1,0 +1,19 @@
+.food-item {
+    display: flex;
+    cursor: pointer;
+    
+    .image-container {
+        
+        .image{
+            width: 60px;
+        }
+    }
+
+    .name {
+        border-bottom: gray 1px solid;
+        width: 100%;
+        text-align: left;
+        /* align-content: center; */
+        padding: 20px;
+    }
+}

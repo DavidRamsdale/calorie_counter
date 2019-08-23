@@ -17,8 +17,10 @@ class App extends Component {
     return ( 
       <div className="App">
         <div className="header">
-          <SearchBox />
-          Today
+          <div className="container">
+            <SearchBox />
+            <h2>Today</h2>
+          </div>
         </div>
         <div className="content-container">
           <div className="user-info">

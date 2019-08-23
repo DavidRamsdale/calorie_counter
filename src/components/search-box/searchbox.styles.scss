@@ -1,4 +1,15 @@
 .searchbox-container {
     height: auto;
     padding-top: 15px;
+    width: 285px;
+
+    .search {
+        width: 100%;
+    }
+
+    .food-results {
+        background: white;
+        position: relative;
+        border: black 1px solid;
+    }
 }

@@ -3,9 +3,9 @@ import './food-item-common.styles.scss'
 
 const FoodItemCommon = ({ imageUrl, name }) => { 
     return(
-        <div className='checkout-item'>
+        <div className='food-item'>
             <div className='image-container'>
-                <img src={imageUrl} alt='item'/>
+                <img className="image" src={imageUrl} alt='item'/>
             </div>
             <span className='name'>{name}</span>
         </div>
