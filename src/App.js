@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import SearchBox from './components/search-box/searchbox.component';
 import SearcResults from './components/search-result/search-result.component';
 import ItemCollection from './components/food-item-list/food-item-list.component';
+import CarlorieMeter from './'
 
 import './App.scss';
 

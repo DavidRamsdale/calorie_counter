@@ -1,4 +1,5 @@
 import React from 'react';
+import './calorie-meter.styles.scss'
 
 const CarlorieMeter = ({ intake_list }) => (
     <div className='calorie-container' >

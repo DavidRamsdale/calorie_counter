@@ -60,8 +60,7 @@ class SearchResult extends Component {
     render() { 
         let { food_name, imageUrl, serving_qty, grams, calories } = this.state;
         let { handleAddButton } = this.props;
-        const options = ["Breakfast", "Dinner"]
-        const defaultOption = options[0]
+        const options = ["Breakfast", "Lunch", "Dinner", "Snack"]
         return (  
             <div className="selected-result-container">
                 <div className="item-header">
@@ -98,7 +97,7 @@ class SearchResult extends Component {
                 </div>
                 <div className="meal-time-container">
                     <span>ADD TO TODAY</span>
-                    <Dropdown options={options} onChange={this.DropdownSelection} value={defaultOption} placeholder="Select an option" />
+                    <Dropdown options={options} onChange={this.DropdownSelection} value={this.state.meal_type} placeholder="Select an option" />
                 </div>
 
                 <div className="button-container">
