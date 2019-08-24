@@ -1,0 +1,17 @@
+.selected-result-container {
+    background-color:  gray;
+    width: 304px;
+    height: 390px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -152px;
+    margin-top: -195px;
+    padding: 14px;
+    box-sizing: border-box;
+
+    .item-header {
+        text-align: left;
+        border-bottom: 1px #fafafa solid;
+    }
+}

@@ -1,7 +1,8 @@
 .searchbox-container {
     height: auto;
     padding-top: 15px;
-    width: 285px;
+    width: 420px;
+    position: absolute;
 
     .search {
         width: 100%;
@@ -12,4 +13,5 @@
         position: relative;
         border: black 1px solid;
     }
+
 }

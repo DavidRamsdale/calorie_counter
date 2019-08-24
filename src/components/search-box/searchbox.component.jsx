@@ -13,7 +13,7 @@ class SearchBox extends Component {
     }
 
     componentDidUpdate() {
-        console.log(this.state.foodData)
+
     }
 
     handleChange = (e) => {
@@ -34,6 +34,7 @@ class SearchBox extends Component {
 
     render() { 
         let { foodData } = this.state;
+        let { handleOnclick } = this.props
         return ( 
             <div className="searchbox-container">
                 <input
@@ -47,25 +48,31 @@ class SearchBox extends Component {
                         <div className="common">
                             <h3>Common</h3>
                             { 
-                                foodData.common.slice(0,4).map( foodItem => 
-                                    <FoodItemCommon 
-                                        key={foodItem.food_name} 
-                                        imageUrl={foodItem.photo.thumb} 
-                                        name={foodItem.food_name}
-                                    />
+                                foodData.common.slice(0,4).map( foodItem =>
+                                    <div key={foodItem.food_name} onClick={() => handleOnclick(foodItem.food_name, "common")}> 
+                                        <FoodItemCommon 
+                                            key={foodItem.food_name} 
+                                            imageUrl={foodItem.photo.thumb} 
+                                            name={foodItem.food_name}
+                                            onClick={() => this.onClickTest(foodItem.food_name)}
+                                        />
+                                    </div>
                                 )
                             }
                         </div>
                         <div className="branded">
                             <h3>Branded</h3>
                             { 
+                                
                                 foodData.branded.slice(0,3).map( foodItem => 
-                                    <FoodItemBranded 
-                                        key={foodItem.food_name} 
-                                        imageUrl={foodItem.photo.thumb} 
-                                        itemName={foodItem.brand_name_item_name}
-                                        brandName={foodItem.brand_name}
-                                    />
+                                    <div key={foodItem.nix_item_id} onClick={() => handleOnclick(foodItem.nix_item_id, "branded")}> 
+                                        <FoodItemBranded 
+                                            key={foodItem.food_name} 
+                                            imageUrl={foodItem.photo.thumb} 
+                                            itemName={foodItem.brand_name_item_name}
+                                            brandName={foodItem.brand_name}
+                                        />
+                                    </div>
                                 )
                             }
                         </div>
