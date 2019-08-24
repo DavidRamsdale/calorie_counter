@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import SearchBox from './components/search-box/searchbox.component';
 import SearcResults from './components/search-result/search-result.component';
 import ItemCollection from './components/food-item-list/food-item-list.component';
-import CarlorieMeter from './'
+import CarlorieMeter from './components/calorie-meter/calorie-meter.component';
 
 import './App.scss';
 
@@ -21,7 +21,6 @@ class App extends Component {
   }
 
   componentDidUpdate() {
-    console.log(this.state.intake_list)
   }
 
   handleOnclick(itemInfo, type) {
@@ -56,7 +55,7 @@ class App extends Component {
   }
 
   handleAddButton = (info) => {
-    console.log("info", info)
+
     this.setState({ 
       intake_list: this.state.intake_list.concat(info),
       selectedItemInfo: ''
@@ -79,7 +78,7 @@ class App extends Component {
               profile
             </div>
             <div className="calories-info">
-              calories
+              <CarlorieMeter intake_list={intake_list} />
             </div>
           </div>
           <div className="item-list">
