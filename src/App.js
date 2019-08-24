@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import SearchBox from './components/search-box/searchbox.component';
 import SearcResults from './components/search-result/search-result.component';
+import ItemCollection from './components/food-item-list/food-item-list.component';
 
 import './App.scss';
 
@@ -10,7 +11,7 @@ class App extends Component {
     super();
 
     this.state = { 
-      foodData: [],
+      intake_list: [],
       searchField: '',
       selectedItemInfo: ''
     }
@@ -19,7 +20,7 @@ class App extends Component {
   }
 
   componentDidUpdate() {
-    console.log(this.state.selectedItemInfo)
+    console.log(this.state.intake_list)
   }
 
   handleOnclick(itemInfo, type) {
@@ -53,8 +54,16 @@ class App extends Component {
     }
   }
 
+  handleAddButton = (info) => {
+    console.log("info", info)
+    this.setState({ 
+      intake_list: this.state.intake_list.concat(info),
+      selectedItemInfo: ''
+    })
+  }
+
   render() {
-    let { selectedItemInfo } = this.state;
+    let { selectedItemInfo, intake_list } = this.state;
     return ( 
       <div className="App">
         <div className="header">
@@ -73,12 +82,12 @@ class App extends Component {
             </div>
           </div>
           <div className="item-list">
-            list
+            <ItemCollection intake_list={intake_list} />
           </div>
         </div>
         { 
           selectedItemInfo ? 
-          <SearcResults selectedItemInfo={selectedItemInfo}/> :
+          <SearcResults selectedItemInfo={selectedItemInfo} handleAddButton={this.handleAddButton}/> :
           null
         }
       </div>

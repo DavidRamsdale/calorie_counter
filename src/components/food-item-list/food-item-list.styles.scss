@@ -1,0 +1,39 @@
+.item-container {
+    height: 80px;
+    display: flex;
+    padding: 12px 0 0 12px;
+
+    .image-container {
+        width: 15%;
+        height: auto;
+        align-self: center;
+        
+        .image {
+            width: 66px;
+        }
+    }
+
+    .item {
+        display: flex;
+        justify-content: space-between;
+        width: 85%;
+        border-bottom: 1px gray solid;
+
+        .top-info {
+            margin-bottom: 6px;
+        }
+
+        .item-left {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .item-right {
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+            margin-right: 30px;
+        }
+    }
+}

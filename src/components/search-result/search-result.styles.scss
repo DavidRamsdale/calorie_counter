@@ -14,4 +14,64 @@
         text-align: left;
         border-bottom: 1px #fafafa solid;
     }
+
+    .item-info-container{
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px white solid;
+            padding: 20px 0 20px 0;
+
+        .grams-calories-container {
+                width: 60%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: right;
+                align-self: center;
+
+            .number { 
+                font-size: 24px;
+                
+            }
+            
+            .text {
+                font-size: 12px
+                // font-family: Roboto-Regular;
+            }
+
+            .grams {
+                display: flex;
+                flex-direction: column;
+                margin-right: 16px;
+            }
+
+            .calories {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        .serving-container {
+            display: flex;
+            width: 38%;
+            height: 56px;
+            background-color: yellow;
+            border-top-left-radius: 8%;
+            border-top-right-radius: 8%;
+
+            .arrows {
+                    display: flex;
+                    flex-direction: column;
+                    width: 50%;
+                    justify-content: center;
+
+                #arrow-up {
+
+                }
+
+                #arrow-down {
+
+                }
+            }
+        }
+    }
 }
