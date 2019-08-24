@@ -43,16 +43,20 @@ class CarlorieMeter extends Component {
 
                 <div className="meal-type-container">
                     <div className="meal-type">
-
+                        <span>{reduced_list.Breakfast}</span>
+                        <span>Breakfast</span>
                     </div>
                     <div className="meal-type">
-                    
+                        <span>{reduced_list.Lunch}</span>
+                        <span>Lunch</span>
                     </div>
                     <div className="meal-type">
-                    
+                        <span>{reduced_list.Dinner}</span>
+                        <span>Dinner</span>
                     </div>
                     <div className="meal-type">
-                    
+                        <span>{reduced_list.Snack}</span>
+                        <span>Snack</span>
                     </div>
                 </div>
 
