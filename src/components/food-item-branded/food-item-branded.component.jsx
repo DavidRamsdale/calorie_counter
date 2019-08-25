@@ -9,7 +9,7 @@ const FoodItembranded = ({ imageUrl, itemName, brandName }) => {
             </div>
             <div className='food-info'>
                 <span>{itemName}</span>
-                <span>{brandName}</span>
+                <span className="brand-name">{brandName}</span>
             </div>
         </div>
     );

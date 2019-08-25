@@ -29,6 +29,19 @@
         border-radius: 8px;
         margin-top: 6px;
         z-index: 1;
+        padding-left: 16px;
+
+        h3 {
+            font-size: 12px;
+            font-weight: 500;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.33;
+            letter-spacing: 2px;
+            color: rgba(0, 0, 0, 0.6);
+            text-align: left;
+        } 
+
     }
 
 }

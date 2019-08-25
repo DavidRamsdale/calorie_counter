@@ -39,7 +39,7 @@ class SearchBox extends Component {
             <div className="searchbox-container">
 
                 <div className="search">
-                    <span class="fa fa-search"></span>
+                    <span className="fa fa-search"></span>
                     <input
                     type='search' 
                     placeholder="Search foods..." 
@@ -50,7 +50,7 @@ class SearchBox extends Component {
                 { foodData ? 
                     <div className="food-results">
                         <div className="common">
-                            <h3>Common</h3>
+                            <h3>COMMON</h3>
                             { 
                                 foodData.common.slice(0,4).map( foodItem =>
                                     <div key={foodItem.food_name} onClick={() => handleOnclick(foodItem.food_name, "common")}> 
@@ -65,7 +65,7 @@ class SearchBox extends Component {
                             }
                         </div>
                         <div className="branded">
-                            <h3>Branded</h3>
+                            <h3>BRANDED</h3>
                             { 
                                 
                                 foodData.branded.slice(0,3).map( foodItem => 

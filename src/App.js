@@ -29,7 +29,7 @@ class App extends Component {
   }
 
   componentDidUpdate() { 
-    console.log(this.state.intake_list)
+    console.log("SADSA", this.state.selectedItemInfo)
   }
 
   onChangeDate(arrow) {
@@ -52,6 +52,8 @@ class App extends Component {
   }
 
   handleOnclick(itemInfo, type) {
+
+    console.log("HELP", itemInfo)
 
     if(type === "common") {
       fetch('https://trackapi.nutritionix.com/v2/natural/nutrients', {
