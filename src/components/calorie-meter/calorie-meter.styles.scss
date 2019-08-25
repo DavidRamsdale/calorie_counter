@@ -1,0 +1,72 @@
+.calorie-container {
+    padding: 10px; 
+
+    .meter-text {
+        font-size: 12px;
+        color: rgba(0,0,0, 0.6);
+    }
+
+    .colorie-consumed {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 22px;
+
+        .calories {
+            font-size: 24px;
+        }
+
+        .consumed {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .goal {
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+        }
+    }
+
+    .meal-type-container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 40px;
+
+        .meal-type {
+            display: flex;
+            flex-direction: column;
+
+            .meal-type-number {
+                font-size: 20px;
+                color: rgba(0,0,0,0.87);
+            }
+        }
+    }
+
+    .meter {
+        height: 5px;
+        position: relative;
+        background-color: #d4b5ff;
+
+        .percentage-bar {
+            display: block;
+            height: 100%;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            background-color: #6200ee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .percetage-number {
+            display: block;
+            height: 100%;
+            position: relative;
+            text-align: right;
+            margin-top: 5px;
+        }
+    }
+}
