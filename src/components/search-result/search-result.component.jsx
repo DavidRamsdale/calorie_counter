@@ -35,10 +35,6 @@ class SearchResult extends Component {
         })
     }
 
-    componentDidUpdate() {
-        console.log("testing", this.state)
-    }
-
     IncrementItem = () => {
         this.setState({ 
             serving_qty: this.state.serving_qty + 1,
