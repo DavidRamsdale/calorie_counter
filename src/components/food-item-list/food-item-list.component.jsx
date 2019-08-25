@@ -6,7 +6,7 @@ const ItemCollection = ({ intake_list }) => (
         <div className='preview'>
             {intake_list
             .map((item) => (
-                <div className="item-container" key={intake_list.food_name}> 
+                <div className="item-container" key={item.food_name}> 
                     <div className="image-container"> 
                         <img className="image" src={item.thumb} alt='item'/>
                     </div>
