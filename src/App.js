@@ -5,6 +5,8 @@ import SearcResults from './components/search-result/search-result.component';
 import ItemCollection from './components/food-item-list/food-item-list.component';
 import CarlorieMeter from './components/calorie-meter/calorie-meter.component';
 
+import MockData from './mock_data/mockData.json';
+
 import './App.scss';
 
 class App extends Component {
@@ -14,13 +16,38 @@ class App extends Component {
     this.state = { 
       intake_list: [],
       searchField: '',
-      selectedItemInfo: ''
+      selectedItemInfo: '',
+      date: 'Today'
     }
 
     this.handleOnclick = this.handleOnclick.bind(this);
   }
 
-  componentDidUpdate() {
+  componentDidMount() {
+    this.setState({ intake_list: MockData.data_points[0].intake_list })
+  }
+
+  componentDidUpdate() { 
+    console.log(this.state.intake_list)
+  }
+
+  onChangeDate(arrow) {
+    if(arrow === "left") {
+      if(this.state.date === "Today"){
+        this.setState({ intake_list: MockData.data_points[1].intake_list, date: "One day ago" })
+      } else if (this.state.date === "One day ago") {
+        this.setState({ intake_list: MockData.data_points[2].intake_list, date: "Two days ago" })
+      }
+    }
+
+    if(arrow === "right") {
+      if(this.state.date === "Two days ago"){
+        this.setState({ intake_list: MockData.data_points[1].intake_list, date: "One day ago" })
+      } else if (this.state.date === "One day ago") {
+        this.setState({ intake_list: MockData.data_points[0].intake_list, date: "Today" })
+      }
+    }
+    
   }
 
   handleOnclick(itemInfo, type) {
@@ -63,13 +90,17 @@ class App extends Component {
   }
 
   render() {
-    let { selectedItemInfo, intake_list } = this.state;
+    let { selectedItemInfo, intake_list, date } = this.state;
     return ( 
       <div className="App">
         <div className="header">
           <div className="container">
             <SearchBox handleOnclick={this.handleOnclick} />
-            <h2>Today</h2>
+            <div className="date-container">
+              <i onClick={() => this.onChangeDate("left")} className="fas fa-chevron-left"></i>
+              <h2>{date}</h2>
+              <i onClick={() => this.onChangeDate("right")} className="fas fa-chevron-right"></i>
+            </div>
           </div>
         </div>
         <div className="content-container">

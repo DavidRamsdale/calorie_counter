@@ -4,19 +4,18 @@ import './calorie-meter.styles.scss'
 class CarlorieMeter extends Component {
     
     render() { 
-        const { intake_list } = this.props
-        console.log(intake_list)
-
+        let { intake_list } = this.props;
+        console.log("intake", intake_list)
         const reduced_list = intake_list.reduce((meals, item) => {
             const {Breakfast = 0, Lunch = 0, Dinner = 0, Snack = 0} = meals;
-            if (item.meal_type === 'Breakfast') {
-                return {...meals, Breakfast: Breakfast + item.calories * item.serving_qty};
-            } else if (item.meal_type === 'Lunch') {
-                return {...meals, Lunch: Lunch + item.calories * item.serving_qty};
-            } else if (item.meal_type === 'Dinner') {
-                return {...meals, Dinner: Dinner + item.calories * item.serving_qty};
-            } else if (item.meal_type === 'Snack') {
-                return {...meals, Snack: Snack + item.calories * item.serving_qty};
+            if (item.meal_type === 'breakfast') {
+                return {...meals, Breakfast: Breakfast + Math.round(item.nf_calories) * item.serving_qty};
+            } else if (item.meal_type === 'lunch') {
+                return {...meals, Lunch: Lunch + Math.round(item.nf_calories) * item.serving_qty};
+            } else if (item.meal_type === 'dinner') {
+                return {...meals, Dinner: Dinner + Math.round(item.nf_calories) * item.serving_qty};
+            } else if (item.meal_type === 'snack') {
+                return {...meals, Snack: Snack + Math.round(item.nf_calories) * item.serving_qty};
             } 
         }, {});
 

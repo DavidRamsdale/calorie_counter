@@ -13,8 +13,12 @@
             justify-items: center;
             align-items: center;
 
-            h2 {
+            .date-container {
                 margin-top: 65px;
+                display: flex;
+                width: 380px;
+                align-items: center;
+                justify-content: space-around;
             }
         }
     }

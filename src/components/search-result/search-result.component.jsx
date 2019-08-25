@@ -10,11 +10,11 @@ class SearchResult extends Component {
         super(props);
         this.state = {  
             food_name: '',
-            imageUrl: '',
+            thumb: '',
             serving_qty: '',
-            grams: '',
-            calories: '',
-            meal_type: 'Breakfast',
+            serving_weight_grams: '',
+            nf_calories: '',
+            meal_type: 'breakfast',
             serving_unit: ''
         }
     this.IncrementItem = this.IncrementItem.bind(this);
@@ -27,10 +27,10 @@ class SearchResult extends Component {
 
         this.setState({
             food_name: food_name,
-            imageUrl: photo.thumb,
+            thumb: photo.thumb,
             serving_qty: serving_qty,
-            grams: Math.round(serving_weight_grams),
-            calories: Math.round(nf_calories),
+            serving_weight_grams: Math.round(serving_weight_grams),
+            nf_calories: Math.round(nf_calories),
             serving_unit: serving_unit
         })
     }
@@ -58,13 +58,13 @@ class SearchResult extends Component {
     }
 
     render() { 
-        let { food_name, imageUrl, serving_qty, grams, calories } = this.state;
+        let { food_name, thumb, serving_qty, serving_weight_grams, nf_calories } = this.state;
         let { handleAddButton } = this.props;
-        const options = ["Breakfast", "Lunch", "Dinner", "Snack"]
+        const options = ["breakfast", "lunch", "dinner", "snack"]
         return (  
             <div className="selected-result-container">
                 <div className="item-header">
-                    <img className="image" src={imageUrl} alt='item'/>
+                    <img className="image" src={thumb} alt='item'/>
                     <p>{food_name}</p>
                 </div>
                 <div className="item-info-container"> 
@@ -86,11 +86,11 @@ class SearchResult extends Component {
 
                     <div className ="grams-calories-container">
                         <div className="grams">
-                            <span className="number">{grams}</span>
+                            <span className="number">{serving_weight_grams}</span>
                             <span className="text">grams</span>
                         </div>
                         <div className="calories">
-                            <span className="number">{calories}</span>
+                            <span className="number">{nf_calories}</span>
                             <span className="text">calories</span>
                         </div>
                     </div>
