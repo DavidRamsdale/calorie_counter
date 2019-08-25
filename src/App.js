@@ -127,6 +127,10 @@ class App extends Component {
           <SearcResults selectedItemInfo={selectedItemInfo} handleAddButton={this.handleAddButton} handleCloseButton={this.handleCloseButton}/> :
           null
         }
+
+        <div className="circle">
+          
+        </div>
       </div>
      );
   }

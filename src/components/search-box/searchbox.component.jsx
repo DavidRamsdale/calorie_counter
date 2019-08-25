@@ -28,6 +28,11 @@ class SearchBox extends Component {
         }
     }
 
+    handleClick = (info, type) => {
+        this.props.handleOnclick(info, type)
+        this.setState({ foodData: null })
+    }
+
     render() { 
         let { foodData } = this.state;
         let { handleOnclick } = this.props
@@ -49,7 +54,7 @@ class SearchBox extends Component {
                             <h3>COMMON</h3>
                             { 
                                 foodData.common.slice(0,4).map( foodItem =>
-                                    <div key={foodItem.food_name} onClick={() => handleOnclick(foodItem.food_name, "common")}> 
+                                    <div key={foodItem.food_name} onClick={() => this.handleClick(foodItem.food_name, "common")}> 
                                         <FoodItemCommon 
                                             key={foodItem.food_name} 
                                             imageUrl={foodItem.photo.thumb} 
