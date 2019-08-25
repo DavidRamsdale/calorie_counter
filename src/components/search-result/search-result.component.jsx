@@ -71,7 +71,7 @@ class SearchResult extends Component {
                         <p>{food_name}</p>
                     </div>
                     <div onClick={handleCloseButton} className="escape-container">
-                        <i class="fas fa-times"></i>
+                        <i className="fas fa-times"></i>
                     </div>
                 </div>
 
