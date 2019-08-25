@@ -58,30 +58,41 @@ class SearchResult extends Component {
     }
 
     render() { 
-        let { food_name, thumb, serving_qty, serving_weight_grams, nf_calories } = this.state;
+        let { food_name, thumb, serving_qty, serving_weight_grams, nf_calories, serving_unit } = this.state;
         let { handleAddButton } = this.props;
         const options = ["breakfast", "lunch", "dinner", "snack"]
-        return (  
-            <div className="selected-result-container">
+        return (
+            <div className="wrapper">
+                 <div className="selected-result-container">
+                
                 <div className="item-header">
-                    <img className="image" src={thumb} alt='item'/>
-                    <p>{food_name}</p>
+                    <div className="image-container">
+                        <img className="image" src={thumb} alt='item'/>
+                        <p>{food_name}</p>
+                    </div>
+                    <div className="escape-container">
+                        <i class="fas fa-times"></i>
+                    </div>
                 </div>
+
                 <div className="item-info-container"> 
                     <div className="serving-container">
-                        <div className="serving-info">
-                            <p>Servings</p>
-                            <p>{serving_qty}</p>
-                        </div>
+                        <div className="measurements">
+                            <div className="serving-info">
+                                <span className="text">Servings</span>
+                                <span>{serving_qty}</span>
+                            </div>
 
-                        <div className="arrows">
-                            <div onClick={() => this.IncrementItem()} >
-                                <i className="fas fa-chevron-up"></i>
-                            </div>
-                            <div onClick={() => this.DecreaseItem()}>
-                                <i className="fas fa-chevron-down"></i>
+                            <div className="arrows">
+                                <div onClick={() => this.IncrementItem()} >
+                                    <i className="fas fa-chevron-up"></i>
+                                </div>
+                                <div onClick={() => this.DecreaseItem()}>
+                                    <i className="fas fa-chevron-down"></i>
+                                </div>
                             </div>
                         </div>
+                        <span id="slice">slice</span>
                     </div>
 
                     <div className ="grams-calories-container">
@@ -95,7 +106,7 @@ class SearchResult extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="meal-time-container">
+                <div className="meal-type-container">
                     <span>ADD TO TODAY</span>
                     <Dropdown options={options} onChange={this.DropdownSelection} value={this.state.meal_type} placeholder="Select an option" />
                 </div>
@@ -107,6 +118,7 @@ class SearchResult extends Component {
 
                 </div>
           </div>
+            </div>  
         );
     }
 }

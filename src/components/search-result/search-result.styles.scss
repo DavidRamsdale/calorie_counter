@@ -1,75 +1,157 @@
-.selected-result-container {
-    background-color:  gray;
-    width: 304px;
-    height: 390px;
+.wrapper {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -152px;
-    margin-top: -195px;
-    padding: 14px;
-    box-sizing: border-box;
-    z-index: 2;
+    top: 0;
+    left: 0;
+    height: 100%;
+     background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    z-index: 3;
 
-    .item-header {
-        text-align: left;
-        border-bottom: 1px rgba(0, 0, 0, 0.87) solid;
-    }
+    .selected-result-container {
+        background-color: white;
+        width: 304px;
+        height: 420px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        margin-left: -152px;
+        margin-top: -195px;
+        padding: 14px;
+        box-sizing: border-box;
+        z-index: 2;
+        border-radius: 10px;
+        border: 1px solid;
+    
+        .meal-type-container {
+            text-align: left;
 
-    .item-info-container{
+            span {
+                font-size: 12px;
+                font-weight: 500;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.33;
+                letter-spacing: 2px;
+                color: rgba(0, 0, 0, 0.6);
+            }
+        }
+    
+        .button-container {
+            text-align: right;
+            margin-top: 10px;
+
+            button {
+                width: 72px;
+                height: 36px;
+                background-color: #6200ee;
+                border-radius: 6px;
+                color: white;
+            }
+        }
+    
+        .item-header {
             display: flex;
             justify-content: space-between;
             border-bottom: 1px rgba(0, 0, 0, 0.87) solid;
-            padding: 20px 0 20px 0;
-
-        .grams-calories-container {
-                width: 60%;
-                display: flex;
-                justify-content: flex-end;
-                align-items: right;
-                align-self: center;
-
-            .number { 
-                font-size: 24px;
-                
+    
+            .image-container {
+                .image {
+                    width: 90px;
+                }
+    
+                p {
+                    font-size: 24px;
+                    margin-top: 8px;
+                    text-align: left;
+                }
             }
-            
-            .text {
-                font-size: 12px
-            }
-
-            .grams {
-                display: flex;
-                flex-direction: column;
-                margin-right: 16px;
-            }
-
-            .calories {
-                display: flex;
-                flex-direction: column;
+    
+            .escape-container {
+                font-size: 22px;
+                color: #6200ee
             }
         }
-
-        .serving-container {
-            display: flex;
-            width: 38%;
-            height: 56px;
-            background-color: yellow;
-            border-top-left-radius: 8%;
-            border-top-right-radius: 8%;
-
-            .arrows {
+    
+        .item-info-container{
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px rgba(0, 0, 0, 0.87) solid;
+                padding-top: 20px;
+    
+            .grams-calories-container {
+                    width: 60%;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: right;
+                    align-self: end;
+    
+                .number { 
+                    font-size: 24px;
+                    
+                }
+                
+                .text {
+                    font-size: 12px
+                }
+    
+                .grams {
                     display: flex;
                     flex-direction: column;
-                    width: 50%;
-                    justify-content: center;
-
-                #arrow-up {
-
+                    margin-right: 16px;
                 }
-
-                #arrow-down {
-
+    
+                .calories {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+    
+            .serving-container {
+                display: flex;
+                flex-direction: column;
+                height: 100px;
+                width: 38%;
+    
+                .text {
+                    font-size: 12px;
+                    color: #6200ee;
+                }
+    
+                #slice {
+                    text-align: left;
+                    margin-left: 10px;
+                    font-size: 12px;
+                    color: #6200ee;
+                }
+            
+                .measurements {
+                    display: flex;
+                    background-color: rgba(190, 187, 187, 0.87);
+                    border-top-left-radius: 8%;
+                    border-top-right-radius: 8%;
+                    width: 120px;
+    
+                    .serving-info {
+                        display: flex;
+                        flex-direction: column;
+                        text-align: left;
+                        padding: 10px;
+                    }
+    
+                    .arrows {
+                            display: flex;
+                            flex-direction: column;
+                            width: 50%;
+                            justify-content: center;
+        
+                        #arrow-up {
+        
+                        }
+        
+                        #arrow-down {
+        
+                        }
+                    }
                 }
             }
         }
