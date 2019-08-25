@@ -28,10 +28,6 @@ class App extends Component {
     this.setState({ intake_list: MockData.data_points[0].intake_list })
   }
 
-  componentDidUpdate() { 
-    console.log("SADSA", this.state.selectedItemInfo)
-  }
-
   onChangeDate(arrow) {
     if(arrow === "left") {
       if(this.state.date === "Today"){
@@ -52,8 +48,6 @@ class App extends Component {
   }
 
   handleOnclick(itemInfo, type) {
-
-    console.log("HELP", itemInfo)
 
     if(type === "common") {
       fetch('https://trackapi.nutritionix.com/v2/natural/nutrients', {
@@ -82,6 +76,10 @@ class App extends Component {
             .then(res =>res.json())
             .then(data => this.setState({ selectedItemInfo: data.foods[0] }));
     }
+  }
+
+  handleCloseButton = () => {
+    this.setState({ selectedItemInfo: '' })
   }
 
   handleAddButton = (info) => {
@@ -126,7 +124,7 @@ class App extends Component {
         </div>
         { 
           selectedItemInfo ? 
-          <SearcResults selectedItemInfo={selectedItemInfo} handleAddButton={this.handleAddButton}/> :
+          <SearcResults selectedItemInfo={selectedItemInfo} handleAddButton={this.handleAddButton} handleCloseButton={this.handleCloseButton}/> :
           null
         }
       </div>

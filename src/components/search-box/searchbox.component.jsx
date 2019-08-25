@@ -12,10 +12,6 @@ class SearchBox extends Component {
         }
     }
 
-    componentDidUpdate() {
-
-    }
-
     handleChange = (e) => {
         if(e.target.value){
             fetch(`https://trackapi.nutritionix.com/v2/search/instant?query=${e.target.value}`, {

@@ -58,8 +58,8 @@ class SearchResult extends Component {
     }
 
     render() { 
-        let { food_name, thumb, serving_qty, serving_weight_grams, nf_calories, serving_unit } = this.state;
-        let { handleAddButton } = this.props;
+        let { food_name, thumb, serving_qty, serving_weight_grams, nf_calories } = this.state;
+        let { handleAddButton, handleCloseButton } = this.props;
         const options = ["breakfast", "lunch", "dinner", "snack"]
         return (
             <div className="wrapper">
@@ -70,7 +70,7 @@ class SearchResult extends Component {
                         <img className="image" src={thumb} alt='item'/>
                         <p>{food_name}</p>
                     </div>
-                    <div className="escape-container">
+                    <div onClick={handleCloseButton} className="escape-container">
                         <i class="fas fa-times"></i>
                     </div>
                 </div>
