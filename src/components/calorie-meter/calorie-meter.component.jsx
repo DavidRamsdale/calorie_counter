@@ -3,6 +3,13 @@ import './calorie-meter.styles.scss'
 
 class CarlorieMeter extends Component {
     
+    percentageLimit(number) {
+        if(number >= 1) {
+            return 1
+        }
+        else return number 
+    }
+
     render() { 
         const { intake_list } = this.props;
         const reduced_list = intake_list.reduce((meals, item) => {
@@ -20,7 +27,8 @@ class CarlorieMeter extends Component {
 
         const total_calories = Object.keys(reduced_list).reduce((sum,key)=>sum+parseFloat(reduced_list[key]||0),0);
 
-        const percent_goal = (total_calories / 1500) * 100;
+        const percent_goal = this.percentageLimit((total_calories / 1500)) * 100;
+
  
         return (  
                 <div className='calorie-container' >
