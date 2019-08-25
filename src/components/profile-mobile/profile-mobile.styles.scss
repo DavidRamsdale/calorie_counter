@@ -1,0 +1,58 @@
+.mobile-profile {
+    height: 65px;
+    margin-top: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 14px;
+    box-sizing: border-box;
+
+    .picture-container{
+        display: flex;
+
+        span {
+            color: white;
+            font-size: 20px;
+            margin-left: 10px;
+        }
+
+        *:last-child {
+            align-self: center;
+        }
+        .profile-image {
+            display: inline-block;
+            position: relative;
+            width: 60px;
+            height: 60px;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+    }
+
+    .info-container {  
+        display: flex;
+        justify-content: space-around;
+        width: 130px;
+
+        .circle{
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .units {
+                font-size: 12px;            
+            }
+        }
+    }
+
+    .name {
+        font-size: 24px;
+    }
+}

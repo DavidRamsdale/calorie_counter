@@ -5,6 +5,7 @@ import SearcResults from './components/search-result/search-result.component';
 import ItemCollection from './components/food-item-list/food-item-list.component';
 import CarlorieMeter from './components/calorie-meter/calorie-meter.component';
 import Profile from './components/profile/profile.component';
+import MoboleProfile from './components/profile-mobile/profile-mobile.component';
 
 import MockData from './mock_data/mockData.json';
 
@@ -106,7 +107,21 @@ class App extends Component {
               <h2>{date}</h2>
               <i onClick={() => this.onChangeDate("right")} className="fas fa-chevron-right"></i>
             </div>
+
+            <MoboleProfile 
+              height={MockData.height_cm} 
+              weight={MockData.weight_kg} 
+              first_name={MockData.first_name} 
+              last_name={MockData.last_name}
+            />
           </div>
+        </div>
+        <div className="mobile-date-container">
+              <div className="date-container">
+                <i onClick={() => this.onChangeDate("left")} className="fas fa-chevron-left"></i>
+                <h2>{date}</h2>
+                <i onClick={() => this.onChangeDate("right")} className="fas fa-chevron-right"></i>
+              </div>
         </div>
         <div className="content-container">
           <div className="user-info">
