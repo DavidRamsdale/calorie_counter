@@ -4,6 +4,7 @@ import SearchBox from './components/search-box/searchbox.component';
 import SearcResults from './components/search-result/search-result.component';
 import ItemCollection from './components/food-item-list/food-item-list.component';
 import CarlorieMeter from './components/calorie-meter/calorie-meter.component';
+import Profile from './components/profile/profile.component';
 
 import MockData from './mock_data/mockData.json';
 
@@ -106,7 +107,12 @@ class App extends Component {
         <div className="content-container">
           <div className="user-info">
             <div className="profile">
-              profile
+              <Profile 
+                height={MockData.height_cm} 
+                weight={MockData.weight_kg} 
+                first_name={MockData.first_name} 
+                last_name={MockData.last_name}
+              />
             </div>
             <div className="calories-info">
               <CarlorieMeter intake_list={intake_list} />

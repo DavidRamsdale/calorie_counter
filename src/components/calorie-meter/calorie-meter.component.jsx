@@ -38,7 +38,7 @@ class CarlorieMeter extends Component {
                         <span className="meter-text">daily goal</span>
                     </div>
                 </div>
-                <div class="meter">
+                <div className="meter">
                     <span className="percentage-bar" style={{width: `${percent_goal}%`}}></span>
                     <span className="percetage-number" style={{width: `${percent_goal}%`}}>{Math.round(percent_goal)}%</span>
                     
