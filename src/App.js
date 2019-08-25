@@ -78,6 +78,10 @@ class App extends Component {
     }
   }
 
+  getFocus = () => {
+    document.getElementById("mySearch").focus();
+  }
+
   handleCloseButton = () => {
     this.setState({ selectedItemInfo: '' })
   }
@@ -128,8 +132,8 @@ class App extends Component {
           null
         }
 
-        <div className="circle">
-          
+        <div onClick={() => this.getFocus()} className="circle-button">
+          <i className="fas fa-plus"></i>
         </div>
       </div>
      );

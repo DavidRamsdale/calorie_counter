@@ -42,6 +42,7 @@ class SearchBox extends Component {
                 <div className="search">
                     <span className="fa fa-search"></span>
                     <input
+                    id="mySearch"
                     type='search' 
                     placeholder="Search foods..." 
                     onChange={this.handleChange} 

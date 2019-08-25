@@ -2,6 +2,21 @@
     text-align: center;
     height: 100vh;
     
+
+    .circle-button {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background-color: #6200ee;
+        color: white;
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    } 
+
     .header{
         height: 20%;
         background: #6200ee;
