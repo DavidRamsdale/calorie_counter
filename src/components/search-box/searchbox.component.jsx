@@ -37,12 +37,16 @@ class SearchBox extends Component {
         let { handleOnclick } = this.props
         return ( 
             <div className="searchbox-container">
-                <input
-                    className="search"
+
+                <div className="search">
+                    <span class="fa fa-search"></span>
+                    <input
                     type='search' 
                     placeholder="Search foods..." 
                     onChange={this.handleChange} 
-                />
+                    />
+                </div>
+                
                 { foodData ? 
                     <div className="food-results">
                         <div className="common">

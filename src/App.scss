@@ -14,11 +14,16 @@
             align-items: center;
 
             .date-container {
-                margin-top: 65px;
+                margin-top: 56px;
+                color: white;
                 display: flex;
                 width: 380px;
                 align-items: center;
                 justify-content: space-around;
+
+                h2 {
+                    font-size: 34px;
+                }
             }
         }
     }
